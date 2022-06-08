@@ -1,4 +1,16 @@
 <%- include("partials/header.ejs") -%>
 <h1>Home</h1>
 <p><%= homeText %></p>
+
+<% for (i = 0; i < postsText.length; i++){ %>
+    <h1> <%= postsText[i].title %> </h1>
+    <p> <%= postsText[i].content %> </p>
+<% } %>
+
+<!--    
+    postsText.forEach(function(post){
+        console.log(postsText.title);
+    });
+-->
+
 <%- include("partials/footer.ejs") -%>
