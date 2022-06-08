@@ -40,6 +40,10 @@ app.post("/compose", function(req, res){
     res.redirect("/");
 });
 
+app.get("/posts/:titles", function(req, res){
+    console.log(req.params.titles);
+});
+
 app.listen(3000, function(){
     console.log("Server running on port 3000...");
 });
