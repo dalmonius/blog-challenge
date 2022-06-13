@@ -41,19 +41,17 @@ app.post("/compose", function(req, res){
 });
 
 app.get("/posts/:postName", function(req, res){
-    const requestedTitle = _.lowerCase(req.params.postName);
-    posts.forEach(function(post){
-        const storedTitle = post.title;
-        if (storedTitle === requestedTitle){
-            console.log(storedTitle);
-            console.log(requestedTitle);
-            console.log("Match");
-        } else {
-            console.log(storedTitle);
-            console.log(requestedTitle);
-            console.log("not a match...");
+    let requestedPost = _.lowerCase(req.params.postName);
+    for (i = 0; i < posts.length; i++){
+        let postsTitle = _.lowerCase(posts[i].title);
+        let postContent = posts[i].content;
+        if (postsTitle === requestedPost){
+            // console.log("req " + requestedPost);
+            // console.log("got " + postsTitle);
+            // console.log("yes");
+            res.render("post", {titleText: postsTitle, contentText: postContent})
         }
-    });
+    }
 });
 
 app.listen(3000, function(){
