@@ -54,6 +54,8 @@ app.get("/posts/:postName", function(req, res){
     }
 });
 
+// next challenge is to make the home page limit the posts content to a certain number of characters
+
 app.listen(3000, function(){
     console.log("Server running on port 3000...");
 });

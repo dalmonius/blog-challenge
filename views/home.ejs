@@ -4,7 +4,7 @@
 
 <% for (i = 0; i < postsText.length; i++){ %>
     <h1> <%= postsText[i].title %> </h1>
-    <p> <%= postsText[i].content %> </p>
+    <p> <%= postsText[i].content.substring(0, 100); %> <a href="/posts/<%= postsText[i].title %>">read more</a> </p>
 <% } %>
 
 <!--    
